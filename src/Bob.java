@@ -17,11 +17,11 @@ public class Bob {
         System.out.println("Talk to Bob:");
         String message = input.nextLine();
 
-        if(message.lastIndexOf("?") != -1){
+        if(message.endsWith("?")){
             System.out.println("Sure.");
-        } else if(message.lastIndexOf("!") != -1){
+        } else if(message.endsWith("!")){
             System.out.println("Woah, chill out!");
-        } else if(message.equalsIgnoreCase("")){
+        } else if(message.isEmpty()){
             System.out.println("Fine. Be that way!");
         } else{
             System.out.println("Whatever");
