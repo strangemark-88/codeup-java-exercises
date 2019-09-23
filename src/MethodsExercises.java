@@ -1,3 +1,7 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+
 public class MethodsExercises {
 
 
@@ -15,6 +19,8 @@ public class MethodsExercises {
 
     public static void main(String[] args) {
 
+        Scanner input = new Scanner(System.in);
+
 //        System.out.println(addition(1,2));
 //        System.out.println(subtraction(1,2));
 //        System.out.println(multiplication(1,2));
@@ -23,8 +29,11 @@ public class MethodsExercises {
 //        System.out.println(multiplicationBonus(1,-10));
 //        System.out.println(multiplicationRecursion(-1, 10));
 
-//        System.out.print("Enter a number between 1 and 10: ");
-//        int userInput = getInteger(1, 10);
+//        int userNum = getInteger(1,10);
+//        System.out.println(factorial());
+
+//        System.out.println(diceRoll());
+        diceRoll();
 
     }
 
@@ -39,6 +48,13 @@ public class MethodsExercises {
 
     public static double multiplication(double num1, double num2){
         return num1 * num2;
+    }
+
+    public static double division(double num1, double num2){
+        return num1 / num2;
+    }
+    public static double modulus(double num1, double num2){
+        return num1 % num2;
     }
 //    Create your multiplication method without the * operator (Hint: a loop might be helpful).
 
@@ -67,7 +83,6 @@ public class MethodsExercises {
     }
 
 
-
 //    Do the above with recursion.
 
     public static double multiplicationRecursion(double num1, double num2){
@@ -82,21 +97,70 @@ public class MethodsExercises {
         }
     }
 
-    public static double division(double num1, double num2){
-        return num1 / num2;
-    }
-    public static double modulus(double num1, double num2){
-        return num1 % num2;
-    }
+
 
 /////////////////////////////// Problem 2 ///////////////////////////////
 
-//    public static int getInteger(int min, int max){
-//        return 0;
-//    }
+//    using recursion
+
+    public static int getInteger(int min, int max){
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a number between 1 and 10: ");
+
+        if(sc.hasNextInt()){
+            int userNum = sc.nextInt();
+            if(userNum >= min && userNum <= max){
+                return userNum;
+            }else{
+                System.out.println("out of range");
+                return getInteger(min,max);
+            }
+        }else {
+            System.out.println("Invalid Input");
+                return getInteger(min,max);
+        }
+    }
 
 
 
+/////////////////////////////// Problem 3 ///////////////////////////////
+
+    private static int factorial() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter number between 1 and 10:");
+
+        int userNum = input.nextInt();
+
+            int result = 1;
+
+        if (userNum >= 1 && userNum <= 10) {
+            for (int i = 1; i <= userNum; i++) {
+                result *= i;
+            }
+            return result;
+
+        } else {
+            System.out.println(factorial());
+            return userNum;
+        }
+    }
+
+/////////////////////////////// Problem 4 ///////////////////////////////
+
+
+    public static void diceRoll() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of sides for a pair of dice");
+        int numSides = input.nextInt();
+
+        int die1 = (int) (Math.random() * numSides + 1);
+        int die2 = (int) (Math.random() * numSides + 1);
+        System.out.println("You rolled a " + die1 + " and " + die2);
+
+    }
 
 
 }
