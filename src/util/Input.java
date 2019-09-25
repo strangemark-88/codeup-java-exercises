@@ -24,7 +24,7 @@ public class Input {
     public boolean yesNo(){
         System.out.println("Y/N?");
 
-        String input = scanner.nextLine().trim();
+        String input = this.scanner.nextLine().trim();
 
         return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
 
@@ -33,65 +33,80 @@ public class Input {
 //    int getInt(int min, int max)
 //The getInt(int min, int max) method should keep prompting the user for input until they give an integer within the min and max.
 
+//    public int getInt(int min, int max){
+//
+//        System.out.println("enter an integer between " + min + " and " + max);
+//        int input;
+//        boolean isInt = false;
+//
+//        do {
+//            input = Integer.parseInt(scanner.nextLine());
+//
+//            if (input >= min && input <= max) {
+//                isInt = true;
+//            } else {
+//                System.out.println("Invalid, enter an integer between " + min + " and " + max);
+//            }
+//        } while (!isInt);
+//
+//        return input;
+//    };
+
     public int getInt(int min, int max){
-
-        System.out.println("enter an integer between " + min + " and " + max);
-        int input;
-        boolean isInt = false;
-
-        do {
-            input = Integer.parseInt(scanner.nextLine());
-
-            if (input > min && input < max) {
-                isInt = true;
+        int input = Integer.parseInt(scanner.nextLine());
+        if (input >= min && input <= max) {
+                return input;
             } else {
                 System.out.println("Invalid, enter an integer between " + min + " and " + max);
+                return getInt(min, max);
             }
-        } while (!isInt);
-
-        return input;
     };
+
 
 //    int getInt()
 
     public int getInt(){
         System.out.println("enter an integer");
-
-        int input = Integer.parseInt(scanner.nextLine());
-        return input;
-
+        return Integer.parseInt(scanner.nextLine());
     };
 
 //    double getDouble(double min, double max)
 // The getDouble method should do the same thing, but with decimal numbers.
 
+//    public double getDouble(double min, double max){
+//
+//        System.out.println("enter a double between " + min + " and " + max);
+//        double input;
+//        boolean isDouble = false;
+//
+//        do {
+//            input = Double.parseDouble(scanner.nextLine());
+//
+//            if (input > min && input < max) {
+//                isDouble = true;
+//            } else {
+//                System.out.println("Invalid, enter a double between " + min + " and " + max);
+//            }
+//        } while (!isDouble);
+//
+//        return input;
+//    };
+
     public double getDouble(double min, double max){
-
-        System.out.println("enter a double between " + min + " and " + max);
-        double input;
-        boolean isDouble = false;
-
-        do {
-            input = Double.parseDouble(scanner.nextLine());
-
-            if (input > min && input < max) {
-                isDouble = true;
-            } else {
-                System.out.println("Invalid, enter a double between " + min + " and " + max);
-            }
-        } while (!isDouble);
-
-        return input;
+        double input = Double.parseDouble(scanner.nextLine());
+        if (input >= min && input <= max) {
+            return input;
+        } else {
+            System.out.println("Invalid, enter a double between " + min + " and " + max);
+            return getDouble(min, max);
+        }
     };
 
 //    double getDouble()
 
     public double getDouble(){
         System.out.println("enter a double");
-
-        int input = Integer.parseInt(scanner.nextLine());
-        return input;
-
+        return Double.parseDouble(scanner.nextLine());
     };
 
 }

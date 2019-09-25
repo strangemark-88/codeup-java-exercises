@@ -39,6 +39,9 @@ public class Person {
 
     public Person(String name){
         this.name = name;
+
+////// or you can use
+//        setName(name);
     }
 
 
@@ -52,7 +55,7 @@ public class Person {
     };
     // prints a message to the console using the person's name
     public void sayHello(){
-        System.out.println("Hello " + this.name);
+        System.out.println("Hello " + this.getName());
     };
 
 }
