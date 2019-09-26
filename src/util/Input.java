@@ -98,7 +98,7 @@ public class Input {
 //    int getInt()
 
     public int getInt(){
-        System.out.println("enter an integer");
+        System.out.println("enter a number:");
         return Integer.parseInt(scanner.nextLine());
     };
 

@@ -14,6 +14,8 @@ public class Movie {
     }
 
     //    Create methods to access these properties and change them (getters and setters).
+//  //    hit control + enter to open the generate menu to make constructor and getters/setters
+
 
     public String getMovieName(){
         return this.name;
