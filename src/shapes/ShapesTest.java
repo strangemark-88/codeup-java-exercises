@@ -30,13 +30,13 @@ public class ShapesTest {
 
         Measurable myShape = new Square(5);
 
-        System.out.println(myShape.getArea());
-        System.out.println(myShape.getPerimeter());
+        System.out.println("myShape.getArea() = " + myShape.getArea());
+        System.out.println("myShape.getPerimeter() = " + myShape.getPerimeter());
 
-        myShape = new Rectangle(3, 4);
+        myShape = new Rectangle(5, 4);
 
-        System.out.println(myShape.getArea());
-        System.out.println(myShape.getPerimeter());
+        System.out.println("myShape.getArea() = " + myShape.getArea());
+        System.out.println("myShape.getPerimeter() = " + myShape.getPerimeter());
 
 //        Why does the code fail to compile if you leave off the getPerimeter method in Rectangle?
 //

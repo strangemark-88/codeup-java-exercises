@@ -20,29 +20,31 @@ public class Square extends Quadrilateral{
 //        return Math.pow(super.length, 2);
 //    }
 
+
     public Square(double side) {
         super(side, side);
     }
 
     @Override
-    public void setLength(double side) {
-        this.length = side;
+    public void setLength(double length) {
+        super.length = length;
+        super.width = length; // makes sure that its always the same
     }
 
     @Override
-    public void setWidth(double side) {
-        this.width = side;
+    public void setWidth(double width) {
+        super.width = width;
+        super.length = width; // makes sure that its always the same
     }
 
     @Override
     public double getPerimeter() {
-        return (2 * length) + (2 * width);
-
+        return super.length * 4;
     }
 
     @Override
     public double getArea() {
-        return length * width;
+        return Math.pow(super.length, 2);
     }
 
 
