@@ -46,7 +46,7 @@ public class Input {
             int num;
             try {
                 num = Integer.valueOf(userInput);
-            } catch (NumberFormatException ex) {
+            } catch (NumberFormatException e) {
                 System.out.println(userInput + " is not a number");
                 return getInt(min, max);
             }
@@ -68,7 +68,7 @@ public class Input {
             int num;
             try {
                 num = Integer.valueOf(userInput);
-            } catch (NumberFormatException ex) {
+            } catch (NumberFormatException e) {
                 System.out.println(userInput + " is not a number");
                 return getInt(min, max, prompt);
             }
@@ -90,7 +90,7 @@ public class Input {
         userInput = this.scanner.nextLine();
         try {
             return Integer.valueOf(userInput);
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException e) {
             System.out.println(userInput + " is not a number");
             return getInt();
         }
@@ -104,7 +104,7 @@ public class Input {
         userInput = this.scanner.nextLine();
         try {
             return Integer.valueOf(userInput);
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException e) {
             System.out.println(userInput + " is not a number");
             return getInt(prompt);
         }
@@ -121,7 +121,7 @@ public class Input {
             double num;
             try {
                 num = Integer.valueOf(userInput);
-            } catch (NumberFormatException ex) {
+            } catch (NumberFormatException e) {
                 System.out.println(userInput + " is not a number");
                 return getDouble(min, max);
             }
@@ -143,7 +143,7 @@ public class Input {
             double num;
             try {
                 num = Integer.valueOf(userInput);
-            } catch (NumberFormatException ex) {
+            } catch (NumberFormatException e) {
                 System.out.println(userInput + " is not a number");
                 return getDouble(min, max, prompt);
             }
@@ -165,7 +165,7 @@ public class Input {
         userInput = this.scanner.nextLine();
         try {
             return Integer.valueOf(userInput);
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException e) {
             System.out.println(userInput + " is not a number");
             return getDouble();
         }
@@ -179,7 +179,7 @@ public class Input {
         userInput = this.scanner.nextLine();
         try {
             return Integer.valueOf(userInput);
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException e) {
             System.out.println(userInput + " is not a number");
             return getDouble(prompt);
         }
